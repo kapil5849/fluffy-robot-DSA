@@ -29,7 +29,7 @@ Time Complexity : O(n^2)
 
 Space Complexity : O(1)
 
-# **Sort both strings and then compare them approach**
+## **Sort both strings and then compare them approach**
 
 The Sort both strings and then compare them approach is a more efficient approach to determine if two strings are permutations of each other. It first sorts both strings in ascending order. Then, it compares the two strings character by character. If the two strings are permutations of each other, then the sorted strings will be the same.
 
@@ -57,7 +57,7 @@ Time Complexity: O(n log n)
 
 Space Complexity: O(n)
 
-# **Hash Table Approach**
+## **Hash Table Approach**
 
 The hash table approach is the most efficient approach to determine if two strings are permutations of each other. It uses a hash table to store the characters in the first string. The hash table is then used to check if each character in the second string is in the hash table.
 
@@ -98,13 +98,13 @@ Time Complexity : O(n)
 
 Space Complexity : O(n)
 
-# **Notes for revision** 
+## **Notes for revision** 
 
 * The brute force approach is the simplest approach, but it is also the least efficient.
 * The Sort both strings and then compare them approach is more efficient than the brute force approach, but it is still not as efficient as the hash table approach.
 * The hash table approach is the most efficient approach, but it requires more space than the other two approaches.
 
-**Table for complexity:**
+## **Table for complexity**
 
 | Approach | Time complexity | Space complexity |
 |---|---|---|
