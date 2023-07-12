@@ -54,18 +54,22 @@ bool isOneEditAway(const string& str1, const string& str2) {
 }
 ```
 ## **Frequency Count**
-- Compare the lengths of the two strings, denoted as length1 and length2. If the absolute difference between the lengths is greater than 1, return false immediately, as more than one edit is required to make the strings identical.
-- Initialize two frequency arrays, frequency1 and frequency2, of size 26 (assuming lowercase alphabets only), with all elements initialized to zero.
-- Traverse the first string, str1, character by character.
-- For each character encountered, update its frequency in frequency1 by incrementing the corresponding index (c - 'a'), where c is the current character.
-- Traverse the second string, str2, character by character.
-- For each character encountered, update its frequency in frequency2 by incrementing the corresponding index (c - 'a'), where c is the current character.
-- Initialize a variable, differenceCount, to track the number of differences between the frequencies of characters in frequency1 and frequency2.
-- Compare the frequencies of characters in frequency1 and frequency2:
-  - For each index i from 0 to 25, check if frequency1[i] is not equal to frequency2[i].
-  - If the frequencies are different, increment differenceCount by 1.
-  - If differenceCount exceeds 1, return false, as more than one edit is required to make the strings identical.
-- After comparing the frequencies of characters, return true if differenceCount is at most 1, indicating that the strings are one edit (or zero edits) away from each other.
+Certainly! Here are the steps for the 2nd approach (Frequency Count) and the 3rd approach (Bit Manipulation) to solve the "One Away" problem:
+
+Approach 2: Frequency Count
+
+- Compare the lengths of the two strings, denoted as `length1` and `length2`. If the absolute difference between the lengths is greater than 1, return false immediately, as more than one edit is required to make the strings identical.
+- Initialize two frequency arrays, `frequency1` and `frequency2`, of size 26 (assuming lowercase alphabets only), with all elements initialized to zero.
+- Traverse the first string, `str1`, character by character.
+- For each character encountered, update its frequency in `frequency1` by incrementing the corresponding index (`c - 'a'`), where `c` is the current character.
+- Traverse the second string, `str2`, character by character.
+- For each character encountered, update its frequency in `frequency2` by incrementing the corresponding index (`c - 'a'`), where `c` is the current character.
+- Initialize a variable, `differenceCount`, to track the number of differences between the frequencies of characters in `frequency1` and `frequency2`.
+- Compare the frequencies of characters in `frequency1` and `frequency2`:
+   - For each index `i` from 0 to 25, check if `frequency1[i]` is not equal to `frequency2[i]`.
+   - If the frequencies are different, increment `differenceCount` by 1.
+   - If `differenceCount` exceeds 1, return false, as more than one edit is required to make the strings identical.
+- After comparing the frequencies of characters, return true if `differenceCount` is at most 1, indicating that the strings are one edit (or zero edits) away from each other.
 ```cpp
 bool isOneEditAway(const string& str1, const string& str2) {
     int length1 = str1.length();
@@ -94,20 +98,20 @@ bool isOneEditAway(const string& str1, const string& str2) {
 }
 ```
 ## **Bit Manipulation**
-- Compare the lengths of the two strings, denoted as length1 and length2. If the absolute difference between the lengths is greater than 1, return false immediately, as more than one edit is required to make the strings identical.
-- Initialize a bitmask variable, bitmask, to 0.
-- Traverse the first string, str1, character by character.
-- For each character encountered, calculate the position of the bit using the character's ASCII value (c - 'a'), where c is the current character.
-- Toggle the corresponding bit in the bitmask by performing the XOR (^) operation with 1 shifted left by the bit position.
-  - If the bit is set, the XOR operation will clear it.
-  - If the bit is clear, the XOR operation will set it.
-- Traverse the second string, str2, character by character.
-- For each character encountered, calculate the position of the bit using the character's ASCII value (c - 'a'), where c is the current character.
-- Toggle the corresponding bit in the bitmask by performing the XOR (^) operation with 1 shifted left by the bit position.
+- Compare the lengths of the two strings, denoted as `length1` and `length2`. If the absolute difference between the lengths is greater than 1, return false immediately, as more than one edit is required to make the strings identical.
+- Initialize a bitmask variable, `bitmask`, to 0.
+- Traverse the first string, `str1`, character by character.
+- For each character encountered, calculate the position of the bit using the character's ASCII value (`c - 'a'`), where `c` is the current character.
+- Toggle the corresponding bit in the bitmask by performing the XOR (^) operation with `1` shifted left by the bit position.
+   - If the bit is set, the XOR operation will clear it.
+   - If the bit is clear, the XOR operation will set it.
+- Traverse the second string, `str2`, character by character.
+- For each character encountered, calculate the position of the bit using the character's ASCII value (`c - 'a'`), where `c` is the current character.
+- Toggle the corresponding bit in the bitmask by performing the XOR (^) operation with `1` shifted left by the bit position.
 - After traversing both strings, check if the bitmask has at most one bit set:
-  - Apply the logical AND (&) operation between the bitmask and the bitmask decremented by one (bitmask & (bitmask - 1)).
-  - If the result is zero, it means the bitmask has at most one bit set, indicating a permutation of a palindrome.
-  - If the result is non-zero, it means the bitmask has more than one bit set, indicating that it does not satisfy the conditions for a permutation of a palindrome.
+   - Apply the logical AND (&) operation between the bitmask and the bitmask decremented by one (`bitmask & (bitmask - 1)`).
+   - If the result is zero, it means the bitmask has at most one bit set, indicating a permutation of a palindrome.
+   - If the result is non-zero, it means the bitmask has more than one bit set, indicating that it does not satisfy the conditions for a permutation of a palindrome.
 - Return true if the bitmask has at most one bit set, indicating that the strings are one edit (or zero edits) away from each other. Otherwise, return false.
 ```cpp
 bool isOneEditAway(const string& str1, const string& str2) {
