@@ -14,6 +14,7 @@ The repository is organized into different chapters, each representing a specifi
 
 The solutions are implemented in C++ programming language. Each solution is carefully crafted to provide an efficient and effective approach to solve the problem.
 
+
 ## Usage
 
 You can browse the repository to find the solutions for specific questions you are interested in. Each question is presented with a detailed explanation of the problem statement and a step-by-step solution. You can review the code and use it as a reference to understand the concepts and algorithms involved.
